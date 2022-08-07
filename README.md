@@ -1,1 +1,7 @@
-# Template for Machine Learning projects
+# Resumen del proceso
+
+1. El ejercicio consiste en crear un modelo de series temporales para detectar anomalías en el uso de la CPU utilizando una serie univariada con frecuencia horaria.
+2. Se proporcionan cuatro datasets que representan la serie en dos momentos de tiempo, y cada una se divide en train y test. Se pide aplicar un modelo de tipo ARIMA(p,d,q)(P,D,Q), donde (p,d,q) son los parámetros de la parte regular y (P,D,Q) los de la parte estacional.
+3. Primero se realiza el diagnóstico de la serie mediante su gráfico, la descomposición en tendencia, estacionalidady ruido y la función de autocorrelación. Se detecta la presencia de estacionalidad a través de un comportamiento cíclico, y una leve tendencia creciente.
+4. Se utiliza el método stepwise para elegir entre distintos valos posibles de los parámetros, el cua; selecciona al modelo ARIMA(0,1,0)(2,1,0).
+5. Se realizan las predicciones solicitadas. En el primer caso la serie predice correctamente el descenso, pero el error aumenta a medida que aumenta el plazo de la predicción (funciona mejor al predecir a corto plazo), En el segundo caso ocurre un comportamiento inesperado (la serie vale en el entorno de cero por un lapaso de tiempo), lo cual no es posible detectar a través de su trayectoria, por lo que el modelo no logra predecirlo.
